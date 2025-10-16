@@ -10,21 +10,22 @@ data = {
 
 df = pd.DataFrame(data)
 
-# Example of adding new rows for dataset versioning (uncomment for later versions)
-# new_row_v2 = {'Name': 'Sabir Washal', 'Age': 20, 'City': 'Chiniot'}
-# df.loc[len(df.index)] = new_row_v2
+# Example of adding new rows for dataset versioning (V2)
+new_row_v2 = {'Name': 'Sabir Washal', 'Age': 20, 'City': 'Chiniot'}
+df.loc[len(df.index)] = new_row_v2
 
+# Example for V3 (you can uncomment later when needed)
 # new_row_v3 = {'Name': 'V3', 'Age': 30, 'City': 'City2'}
 # df.loc[len(df.index)] = new_row_v3
 
-#  Ensure the "data" directory exists at the root level
+# Ensure the "data" directory exists at the root level
 data_dir = 'data'
 os.makedirs(data_dir, exist_ok=True)
 
-#  Define file path correctly
+# Define file path correctly
 file_path = os.path.join(data_dir, 'sample_data.csv')
 
-#  Save DataFrame to CSV
+# Save DataFrame to CSV
 df.to_csv(file_path, index=False)
 
 print(f" CSV file saved successfully at: {file_path}")
